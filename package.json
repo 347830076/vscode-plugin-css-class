@@ -17,7 +17,7 @@
         "url": "https://github.com/347830076/vscode-plugin-css-class"
     },
 	"activationEvents": [
-		"*"
+		"onCommand:class-menu"
 	],
 	"main": "./extension/index.js",
 	"contributes": {

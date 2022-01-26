@@ -128,6 +128,7 @@ module.exports = [{
 },
 {
     title: '旋转动画',
+    key: 9,
     style: `
 /* 旋转 */
 .animation-rotate  {
