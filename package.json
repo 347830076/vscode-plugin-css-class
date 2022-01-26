@@ -1,23 +1,43 @@
 {
 	"name": "css-class",
-	"displayName": "vscode-demo",
-	"description": "aliwang",
+	"displayName": "常用css代码段",
+	"keywords": ["css", "css3", "sass"],
+	"description": "常用css代码段大全",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.63.0"
 	},
+	"publisher": "aliwang",
 	"categories": [
 		"Other"
 	],
+	"icon": "images/logo.png",
 	"activationEvents": [
 		"*"
 	],
-	"main": "./extension.js",
+	"main": "./extension/index.js",
 	"contributes": {
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "class-menu",
+                    "group": "navigation"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "css-class.class:带左边柱子的标题",
+                "command": "class-menu",
+                "title": "css常用代码大全"
+            },
+			{
+				"command": "class-0",
 				"title": "class:带左边柱子的标题"
+			},
+			{
+				"command": "class-1",
+				"title": "class:单文本溢出"
 			}
 		]
 	},
