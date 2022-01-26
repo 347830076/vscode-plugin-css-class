@@ -26,7 +26,7 @@
 
 大家可以fork项目，然后提PR，步骤如下：
 
-1. 到github地址：[https://github.com/347830076/vscode-plugin-css-class]点击fork，觉得好的话，也顺便给我点个star，感谢大家。
+1. 到github地址：[https://github.com/347830076/vscode-plugin-css-class](https://github.com/347830076/vscode-plugin-css-class)点击fork，觉得好的话，也顺便给我点个star，感谢大家。
 2. 拉代码下来，切换到 `develop` 分支。
 3. 在根目录下的 `css-class.js`，参考原有代码，添加上你们想要常用的css代码段就可以了。
 4. 最后提交代码到`develop`分支，然后提PR就可以了，我看到review写代码后，就会重新发布到vscode扩展应用
