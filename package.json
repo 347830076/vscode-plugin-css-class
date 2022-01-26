@@ -12,6 +12,10 @@
 		"Other"
 	],
 	"icon": "images/logo.png",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/347830076/vscode-plugin-css-class"
+    },
 	"activationEvents": [
 		"*"
 	],
