@@ -34,16 +34,16 @@
 			{
                 "command": "class-menu",
                 "title": "css常用代码大全"
-            },
-			{
-				"command": "class-0",
-				"title": "class:带左边柱子的标题"
-			},
-			{
-				"command": "class-1",
-				"title": "class:单文本溢出"
-			}
-		]
+            }
+		],
+        "keybindings": [
+            {
+                "command": "class-menu",
+                "key": "shift+c",
+                "mac": "shift+c",
+                "when": "editorTextFocus"
+            }
+        ]
 	},
 	"scripts": {
 		"lint": "eslint .",

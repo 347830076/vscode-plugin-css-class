@@ -5,9 +5,9 @@ const vscode = require("vscode");
 
 // 注册命令，点击命令填写内容到编辑器
 function registerCommand(context, CSS_CLASS) {
-    CSS_CLASS.forEach(({ style }, index) => {
+    CSS_CLASS.forEach(({ style, key }, index) => {
         const styleString = String(style);
-        const disposable = vscode.commands.registerCommand(`class-${index}`, () => {
+        const disposable = vscode.commands.registerCommand(`class-${key}`, () => {
             const editor = vscode.window.activeTextEditor;
             if (editor) {
                 const { selections } = editor;
