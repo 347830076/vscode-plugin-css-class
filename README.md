@@ -9,12 +9,10 @@
 
 ![已收录css9个](https://img.shields.io/badge/已收录css-9个-blue.svg?style=plastic)
 
-### 使用方式
+### 使用方法
 <!-- #### 方法一
 1. 按 `shift + win + p` 打开vscode 搜索命令
 2. 输入关键词搜索, 比如 "`class:单文本溢出`"， 或 "`单文本`"。 -->
-
-#### 方法
 
 右键选择 "`css常用代码大全`"，就会弹出css常用代码列表。点击选择即可
 
