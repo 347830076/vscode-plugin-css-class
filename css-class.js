@@ -145,5 +145,34 @@ module.exports = [{
     }
 }
 `
+},
+{
+    title: '标题左右两边横线',
+    key: 10,
+    style: `
+/* 标题左右两边横线 */
+.about-line {
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 2px;
+        background-color: #1890FF;
+        content: '';
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        right: calc(100% + 16px);
+    }
+
+    &::after {
+        left: calc(100% + 16px);
+    }
+}    
+`
 }
 ]

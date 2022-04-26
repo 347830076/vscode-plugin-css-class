@@ -7,7 +7,7 @@
 
 所以这个项目开源，欢迎大家参与交流，为常用css贡献一份力，让我们前端人css开发效率高起来。
 
-![已收录css9个](https://img.shields.io/badge/已收录css-9个-blue.svg?style=plastic)
+![已收录css10个](https://img.shields.io/badge/已收录css-10个-blue.svg?style=plastic)
 
 ### 使用方法
 <!-- #### 方法一
