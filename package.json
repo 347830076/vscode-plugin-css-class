@@ -1,9 +1,9 @@
 {
 	"name": "css-code-block",
 	"displayName": "Css Code Block",
-	"keywords": ["css", "css code", "css code block", "css3", "sass"],
+	"keywords": ["css", "css code", "css code block", "css3", "sass", "scss"],
 	"description": "常用css代码段大全",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.63.0"
 	},

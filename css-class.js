@@ -52,6 +52,7 @@ module.exports = [{
     title: '右箭头',
     key: 4,
     style: `
+/*右箭头*/
 &::after {
     position: absolute;
     right: 20px;
@@ -69,6 +70,7 @@ module.exports = [{
     title: '三角形',
     key: 5,
     style: `
+/*三角形*/
 .triangle {
     display: inline-block;
     vertical-align: middle;
@@ -81,6 +83,7 @@ module.exports = [{
     title: '垂直居中对齐(translate)',
     key: 6,
     style: `
+/*垂直居中对齐(translate)*/
 .vc {
     position: absolute;
     top: 50%;
@@ -93,6 +96,7 @@ module.exports = [{
     title: '强制换行',
     key: 7,
     style: `
+/*强制换行*/
 .pre-wrap {
     white-space: pre-wrap;        
     word-wrap: break-word;  
@@ -130,7 +134,7 @@ module.exports = [{
     title: '旋转动画',
     key: 9,
     style: `
-/* 旋转 */
+/* 旋转动画 */
 .animation-rotate  {
     animation: rotate 1s linear infinite;
 }
@@ -174,5 +178,206 @@ module.exports = [{
     }
 }    
 `
+},
+{
+    title: '文字两端对齐',
+    key: 11,
+    style: `
+text-align: justify;
+`
+},
+{
+    title: '下面是scss的 mixin ======================',
+    key: 'm0',
+    style: ''
+},
+{
+    title: 'flex 布局',
+    key: 'm1',
+    style: `
+// flex 布局
+@mixin flex($obj) {
+    display: flex;
+
+    @if map-get($obj, "justify") {
+    justify-content: map-get($obj, "justify");
+    }
+
+    @if map-get($obj, "align") {
+    align-items: map-get($obj, "align");
+    }
 }
+
+// flex 水平居中
+@mixin flex-c {
+    @include flex((justify: center));
+}
+
+// flex 垂直居中
+@mixin flex-vc {
+    @include flex((align: center));
+}
+
+// flex 水平两端对齐
+@mixin flex-sb {
+    @include flex((justify: space-between));
+}
+
+// flex 水平垂直居中
+@mixin flex-cc {
+    @include flex((justify: center, align: center));
+}
+
+// flex 水平两端对齐，垂直居中
+@mixin flex-sbc {
+  @include flex((justify: space-between, align: center));
+}
+`
+},
+{
+    title: '圆',
+    key: 'm2',
+    style: `
+// 圆圈
+@mixin circle($width) {
+    display: inline-block;
+    border-radius: 50%;
+    width: $width;
+    height: $width;
+}
+`
+},
+{
+    title: '省略号',
+    key: 'm3',
+    style: `
+// 省略号样式
+@mixin ellipsis($lineNum: "") {
+    overflow: hidden;
+    
+    @if $lineNum != "" {
+        /* stylelint-disable-next-line */
+        display: -webkit-box;
+        /* stylelint-disable-next-line */
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $lineNum;
+    } @else {
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+`
+},
+{
+    title: '实心三角形',
+    key: 'm4',
+    style: `
+// 实心三角形
+@mixin arrow($direction, $width, $height, $color) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+
+    @if $direction == "top" {
+    border-top: 0;
+    border-right: solid $width transparent;
+    border-bottom: solid $height $color;
+    border-left: solid $width transparent;
+    } @else if $direction == "bottom" {
+    border-top: solid $height $color;
+    border-right: solid $width transparent;
+    border-bottom: 0;
+    border-left: solid $width transparent;
+    } @else if $direction == "left" {
+    border-top: solid $height transparent;
+    border-right: solid $width $color;
+    border-bottom: solid $height transparent;
+    border-left: 0;
+    } @else if $direction == "right" {
+    border-top: solid $height transparent;
+    border-right: 0;
+    border-bottom: solid $height transparent;
+    border-left: solid $width $color;
+    }
+}
+`
+},
+{
+    title: '上下左右居中（margin版）',
+    key: 'm5',
+    style: `
+// 上下左右居中，为解决被外部数据覆盖的问题，强制使用!important
+@mixin setXYMiddle($width, $height) {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-top: -$height / 2 !important;
+    margin-left: -$width / 2 !important;
+    width: $width !important;
+    min-width: unset;
+    height: $height !important;
+}
+
+// 上下居中
+@mixin setYMiddle($height) {
+  position: absolute;
+  top: 50%;
+  margin-top: -$height / 2;
+  height: $height;
+}
+
+// 左右居中
+@mixin setXMiddle($width) {
+  position: absolute;
+  left: 50%;
+  margin-left: -$width / 2;
+  width: $width;
+}
+`
+},
+{
+    title: '跳转文字 有hover效果',
+    key: 'm6',
+    style: `
+// 跳转文字 有hover效果
+@mixin link($color: $text-grey-color, $hover-color: $text-grey-color) {
+    position: relative;
+    color: $color;
+    cursor: pointer;
+    user-select: none;
+
+    @content;
+
+    &:hover {
+    color: $hover-color;
+    }
+}
+`
+},
+{
+    title: '',
+    key: 'm7',
+    style: `
+// 跳转文字 带下划线 有hover效果
+@mixin link-underline($color: $text-grey-color, $hover-color: $text-grey-color) {
+    @include link($color, $hover-color) {
+    &:hover {
+        &::after {
+        border-bottom-color: $hover-color;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        left: 0;
+        border-bottom: 1px solid $color;
+        width: 100%;
+    }
+    }
+}
+`
+},
 ]
